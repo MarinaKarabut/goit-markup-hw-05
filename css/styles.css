@@ -91,6 +91,7 @@ img {
   border: 1px solid #ECECEC;
   align-items: center;
   position: fixed;
+  z-index: 3;
 
 }
 
@@ -215,12 +216,39 @@ margin-right: 0px;
   color: #ffffff;
   font-weight: 900;
   font-size: 44px;
-  line-height: 1.4;
+  line-height: 1.36;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
+.backdrop {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 528px;
+  min-height: 581px;
+  background-color: #ffffff;
+  padding: 15px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
           /*     Features     */
 .section-feature {
   padding-top: 94px;
@@ -278,7 +306,13 @@ margin-right: 0px;
   margin-top: 10px;
 }
 
-                   /* Section */
+
+                  /*    Services   */
+
+.section-services {
+  padding-top: 47px;
+  padding-bottom: 94px;
+}
 
 .section-title {
   color: var(--title-text-color);
@@ -288,12 +322,6 @@ margin-right: 0px;
   text-align: center;
   margin-bottom: 50px;
 }
-                  /*    Services   */
-
-.section-services {
-  padding-top: 47px;
-  padding-bottom: 94px;
-}
 
 .services {
   display: flex;
@@ -301,6 +329,31 @@ margin-right: 0px;
   margin-left: -30px;
   margin-top: -30px;
   padding: 0;
+}
+
+.services-list {
+  display: block;
+  position: relative;
+  width: 370px;
+  height: 294px;
+  z-index: 1;
+}
+
+.service {
+  position: absolute; 
+  left: 0;
+  bottom: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+  width: 100%;
+  height: 70px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 27px 0px;
+  z-index: 2;
 }
 
 .services > .services-list {
@@ -459,6 +512,19 @@ margin-right: 0px;
   border: 1px solid #eeeeee;
 }
 
+/*.cards {
+  position: relative;
+}
+.card-img::before{
+  display: inline-block;
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px
+  outline: 1px solid red;
+  background-color: rgba(33, 150, 243, 0.9);;
+  
+}*/
 .examples .title {
   color: var(--title-text-color);
   font-weight: 700;

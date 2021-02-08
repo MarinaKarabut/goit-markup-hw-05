@@ -245,9 +245,7 @@ margin-right: 0px;
 }
 
 .button:hover {
-  background-color: var(--accent-color);
-  opacity: 0.9;
-  
+  background-color: #188CE8;  
 }
 
 .backdrop {
